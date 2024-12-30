@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suvarna Hebbar</title>
+    <style>
+        /* Reset */
+        body, h1, h2, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #534caf;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #564caf;
+            margin: 0 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #6f4caf;
+            margin-bottom: 15px;
+        }
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Style for the logo image */
+        .logo-img {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        /* Style for the hidden second logo */
+        .second-logo {
+            display: none;
+            width: 150px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Suvarna Hebbar</h1>
+        <p>Creative Graphic Designer | Illustrator</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hi, I’m Suvarna Hebbar, a passionate graphic designer with experience in logo design, branding, and UX/UI design. I strive to create visually appealing and user-friendly designs that leave a lasting impression.</p>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <h2>Portfolio</h2>
+            <div class="portfolio">
+                <img src="C:/Users/Admin/Pictures/suvarna%20hebbar.jpeg" alt="Project 1">
+                <img src="C:/Users/Admin/Pictures/Black Gold Minimalist Monochrome Initial Name Logo.jpg" alt="Project 2">
+                
+                <!-- Logo image section -->
+                <img id="logo" class="logo-img" src="C:/Users/Admin/Pictures/Black White Bold Fashion Store Logo.jpg" alt="Logo Image" onclick="toggleLogo()">
+                <img id="secondLogo" class="second-logo" src="C:/Users/Admin/Pictures/Black Natural Branding Logo.jpg" alt="Second Logo Image" onclick="toggleLogo()">
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <p>suvarnahebbar99@gmail.com</p>
+            <p>Phone: +919972701590</p>
+            <p>Follow me on <a href="https://www.linkedin.com/in/suvarna-hebbar-45b684275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a> | <a href="https://www.instagram.com/suvarna_hebbar/profilecard/?igsh=YWc3ZnQwOXJqa2R6">Instagram</a> | <a href="https://github.com/suva26">Github</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Suvarna Hebbar. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleLogo() {
+            var logo = document.getElementById('logo');
+            var secondLogo = document.getElementById('secondLogo');
+            // If logo is visible, hide it and show the second logo
+            if (logo.style.display !== 'none') {
+                logo.style.display = 'none';
+                secondLogo.style.display = 'block';
+            }
+            // If second logo is visible, hide it and show the first logo
+            else {
+                logo.style.display = 'block';
+                secondLogo.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
