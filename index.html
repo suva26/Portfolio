@@ -1,167 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suvarna Hebbar</title>
-    <style>
-        /* Reset */
-        body, h1, h2, p, ul, li, a {
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            list-style: none;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suvarna Hebbar | Frontend Developer</title>
 
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
 
-        header {
-            background: #534caf;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    /* NAVBAR */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      background: #020617;
+      z-index: 10;
+    }
 
-        header p {
-            font-size: 1.2em;
-        }
+    nav a {
+      color: #c7d2fe;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
+    nav a:hover {
+      color: #6366f1;
+    }
 
-        nav a {
-            color: #564caf;
-            margin: 0 15px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
+    /* HERO */
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
+    .hero h1 {
+      font-size: 3rem;
+      color: #6366f1;
+    }
 
-        .section {
-            margin-bottom: 40px;
-        }
+    .hero h2 {
+      font-size: 1.4rem;
+      margin-top: 10px;
+      color: #c7d2fe;
+    }
 
-        .section h2 {
-            color: #6f4caf;
-            margin-bottom: 15px;
-        }
+    /* SECTION */
+    section {
+      padding: 80px 15%;
+    }
 
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+    section h2 {
+      font-size: 2.2rem;
+      color: #6366f1;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-        .portfolio img {
-            width: 100%;
-            height: auto;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-        }
+    /* ABOUT */
+    .about p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: #d1d5db;
+    }
 
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
+    /* PORTFOLIO */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
 
-        /* Style for the logo image */
-        .logo-img {
-            width: 150px;
-            cursor: pointer;
-        }
+    .project-card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 1px solid #1e293b;
+    }
 
-        /* Style for the hidden second logo */
-        .second-logo {
-            display: none;
-            width: 150px;
-            margin-top: 10px;
-        }
-    </style>
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(99,102,241,0.3);
+    }
+
+    .project-card h3 {
+      color: #e0e7ff;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .modal-content {
+      background: #020617;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-content a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #6366f1;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 10px 0;
+    }
+
+    .social a {
+      color: #6366f1;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #9ca3af;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Suvarna Hebbar</h1>
-        <p>Frontend Developer || Web Developer</p>
-    </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <!-- NAV -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <div class="container">
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>Hi, I’m Suvarna Hebbar, Enthusiastic and detail-oriented Frontend Developer with hands-on experience in React.js, HTML, CSS, and JavaScript. Completed multiple frontend projects, including job listing platform and portfolio website, showcasing skills in responsive design, component-based development, and user-friendly UI. Seeking a challenging role in a dynamic company to contribute and grow as a frontend professional.</p>
-        </section>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Suvarna Hebbar</h1>
+    <h2>Frontend Developer || Web Developer</h2>
+  </div>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section">
-            <h2>Portfolio</h2>
-            <div class="portfolio">
-                <a href="https://job-listing-board-project-fppuqnbes-suvarna-hebbars-projects.vercel.app/">Job Listing Board Project</a>
-                
-                
-                
-                <!-- Logo image section -->
-                <img id="logo" class="logo-img" src="Black White Bold Fashion Store Logo.jpg" alt="Logo Image" onclick="toggleLogo()">
-                <img id="secondLogo" class="second-logo" src="Black Natural Branding Logo.jpg" alt="Second Logo Image" onclick="toggleLogo()">
-            </div>
-        </section>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I’m Suvarna Hebbar, Enthusiastic and detail-oriented Frontend Developer
+      with hands-on experience in React.js, HTML, CSS, and JavaScript.
+      Completed multiple frontend projects, including job listing platform and
+      portfolio website, showcasing skills in responsive design,
+      component-based development, and user-friendly UI.
+      Seeking a challenging role in a dynamic company to contribute and grow
+      as a frontend professional.
+    </p>
+  </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2>Contact Me</h2>
-            <p>suvarnahebbar99@gmail.com</p>
-            <p>Phone: +919972701590</p>
-            <p>Follow me on <a href="https://www.linkedin.com/in/suvarna-hebbar-45b684275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a> | <a href="https://www.instagram.com/suvarna_hebbar/profilecard/?igsh=YWc3ZnQwOXJqa2R6">Instagram</a> | <a href="https://github.com/suva26">Github</a></p>
-        </section>
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+
+    <div class="projects">
+      <div class="project-card" onclick="openModal('job')">
+        <h3>Job Listing Board</h3>
+      </div>
+
+      <div class="project-card" onclick="openModal('portfolio')">
+        <h3>Portfolio Website</h3>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2024 Suvarna Hebbar. All Rights Reserved.</p>
-    </footer>
+  <!-- MODALS -->
+  <div id="job" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('job')">&times;</span>
+      <h3>Job Listing Board</h3>
+      <p>React-based job portal with Admin & User flow.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+  </div>
 
-    <script>
-        function toggleLogo() {
-            var logo = document.getElementById('logo');
-            var secondLogo = document.getElementById('secondLogo');
-            // If logo is visible, hide it and show the second logo
-            if (logo.style.display !== 'none') {
-                logo.style.display = 'none';
-                secondLogo.style.display = 'block';
-            }
-            // If second logo is visible, hide it and show the first logo
-            else {
-                logo.style.display = 'block';
-                secondLogo.style.display = 'none';
-            }
-        }
-    </script>
+  <div id="portfolio" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('portfolio')">&times;</span>
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio built using HTML, CSS, JavaScript.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: suvarnahebbar99@gmail.com</p>
+    <p>Phone: +91 99727 01590</p>
+
+    <div class="social">
+      <a href="#">LinkedIn</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Suvarna Hebbar | Frontend Developer
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
-
-
-
