@@ -97,6 +97,7 @@
       cursor: pointer;
       transition: 0.3s;
       border: 1px solid #1e293b;
+      text-align: center;
     }
 
     .project-card:hover {
@@ -172,12 +173,13 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
   <nav>
     <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="#projects">Portfolio</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -202,35 +204,36 @@
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portfolio">
+  <section id="projects">
     <h2>Portfolio</h2>
 
     <div class="projects">
-      <div class="project-card" onclick="openModal('job')">
+      <div class="project-card" onclick="openModal('jobProject')">
         <h3>Job Listing Board</h3>
       </div>
 
-      <div class="project-card" onclick="openModal('portfolio')">
+      <div class="project-card" onclick="openModal('portfolioProject')">
         <h3>Portfolio Website</h3>
       </div>
     </div>
   </section>
 
-  <!-- MODALS -->
-  <div id="job" class="modal">
+  <!-- JOB MODAL -->
+  <div id="jobProject" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('job')">&times;</span>
+      <span class="close" onclick="closeModal('jobProject')">&times;</span>
       <h3>Job Listing Board</h3>
-      <p>React-based job portal with Admin & User flow.</p>
+      <p>React-based job portal with Admin and User flow.</p>
       <a href="#" target="_blank">View Project</a>
     </div>
   </div>
 
-  <div id="portfolio" class="modal">
+  <!-- PORTFOLIO MODAL -->
+  <div id="portfolioProject" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('portfolio')">&times;</span>
+      <span class="close" onclick="closeModal('portfolioProject')">&times;</span>
       <h3>Portfolio Website</h3>
-      <p>Personal portfolio built using HTML, CSS, JavaScript.</p>
+      <p>Personal portfolio built using HTML, CSS, and JavaScript.</p>
       <a href="#" target="_blank">View Project</a>
     </div>
   </div>
